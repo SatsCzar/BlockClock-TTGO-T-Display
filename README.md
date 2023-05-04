@@ -5,7 +5,7 @@ This is a versatile Bitcoin blockclock for the TTGO T-Display (ESP32) that conne
 ## Installing
 
 1. Download the latest version of Arduino IDE
-2. Follow this [tutorial](https://github.com/Xinyuan-LilyGO/TTGO-T-Display/blob/master/README.md) to install the required libraries, which include TFT_eSPI, Button2, and ArduinoJson
+2. Follow this [tutorial](https://github.com/Xinyuan-LilyGO/TTGO-T-Display/blob/master/README.MD) to install the required libraries, which include TFT_eSPI, Button2, and ArduinoJson
 3. Install the ESP32 Bitcoin BlockClock Library as described in its [README](https://github.com/SatsCzar/ESP32-Bitcoin-BlockClock-Library)
 4. Clone the repository and open the blockclock.ino file with the Arduino IDE
 5. Select the COM port corresponding to your TTGO T-Display and the model
