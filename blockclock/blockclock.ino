@@ -19,7 +19,10 @@ RecommendedFees recommendedFeesGlobal;
 
 uint8_t globalMinute = 61;
 int globalBatteryLevel = -1;
-unsigned long lastMinuteCheck = 60001;
+unsigned long lastMinuteCheck = 0;
+const unsigned long debounceDelay = 50;
+unsigned long lastButton1Press = 0;
+unsigned long lastButton2Press = 0;
 
 void setup() {
   initScreen();
@@ -43,12 +46,17 @@ void initButtons() {
 }
 
 void loop() {
-  if (digitalRead(BUTTON1PIN) == 0) {
+  unsigned long currentTime = millis();
+  if (digitalRead(BUTTON1PIN) == 0 &&
+      currentTime - lastButton1Press > debounceDelay) {
     buttonActionScreen();
+    lastButton1Press = currentTime;
   }
 
-  if (digitalRead(BUTTON2PIN) == 0) {
+  if (digitalRead(BUTTON2PIN) == 0 &&
+      currentTime - lastButton2Press > debounceDelay) {
     buttonBPressed();
+    lastButton2Press = currentTime;
   }
 
   if (isIntervalElapsed()) {
