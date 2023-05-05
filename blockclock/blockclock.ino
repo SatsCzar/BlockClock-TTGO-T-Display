@@ -23,7 +23,7 @@ unsigned long lastMinuteCheck = 60001;
 
 void setup() {
   initScreen();
-  setCpuMaxPowerSave();
+  setCpuNormalClock();
 
   drawStringPush("BLOCKCLOCK", 10, 10, 2);
 
