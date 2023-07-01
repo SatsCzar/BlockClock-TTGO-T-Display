@@ -1,2 +1,7 @@
 .vscode
 build
+blockclock/.last-used
+blockclock/compile_commands.json
+blockclock/debug_custom.json
+blockclock/debug.cfg
+blockclock/debug.svd

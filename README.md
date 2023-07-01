@@ -10,8 +10,24 @@ This is a versatile Bitcoin blockclock for the TTGO T-Display (ESP32) that conne
    - ArduinoJson (check the ArduinoJson [tutorial](https://arduinojson.org/v6/doc/installation/#option-1-use-the-arduino-library-manager) for more information)
 3. Install the ESP32 Bitcoin BlockClock Library as described in its [README](https://github.com/SatsCzar/ESP32-Bitcoin-BlockClock-Library).
 4. Clone the repository and open the blockclock.ino file with the Arduino IDE.
-5. Select the COM port corresponding to your TTGO T-Display and the model.
-6. Upload the code.
+5. Make sure to edit the `userBoardDefines.h` file in the ESP32-Bitcoin-BlockClock-Library to define your device type. For example:
+```arduino
+#define GENERIC_ESP32 1
+/* #define M5STACK 1 */
+#ifdef GENERIC_ESP32
+#define BUTTON1PIN 35
+#define BUTTON2PIN 0
+#endif
+```
+6. Select the COM port corresponding to your TTGO T-Display and the model.
+7. Compile and upload the code using these commands:
+```bash
+# Command to compile
+arduino-cli compile --fqbn esp32:esp32:esp32:JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=16M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none --build-path build --port COM18 blockclock/blockclock.ino
+
+# Command to upload
+arduino-cli upload --fqbn esp32:esp32:esp32:JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=16M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none --input-dir ./build --port COM18
+```
 
 ## Screens
 
