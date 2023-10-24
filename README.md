@@ -23,10 +23,10 @@ This is a versatile Bitcoin blockclock for the TTGO T-Display (ESP32) that conne
 7. Compile and upload the code using these commands:
 ```bash
 # Command to compile
-arduino-cli compile --fqbn esp32:esp32:esp32:JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=16M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none --build-path build --port COM18 blockclock/blockclock.ino
+arduino-cli compile --fqbn esp32:esp32:esp32:JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none blockclock/blockclock.ino
 
 # Command to upload
-arduino-cli upload --fqbn esp32:esp32:esp32:JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=16M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none --input-dir ./build --port COM18
+arduino-cli upload --fqbn esp32:esp32:esp32:JTAGAdapter=default,PSRAM=disabled,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,LoopCore=1,EventsCore=1,DebugLevel=none,EraseFlash=none --port COM18 blockclock/blockclock.ino
 ```
 
 ## Screens
